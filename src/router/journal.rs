@@ -1,6 +1,6 @@
-use std::{io::Read, path::Path};
+use std::path::Path;
 
-use axum::{response::Html, routing::get, Router};
+use axum::response::Html;
 use walkdir::WalkDir;
 
 fn parse_markdown_to_html(file: &Path) -> String {
@@ -35,6 +35,8 @@ pub async fn all_journal_entries() -> Html<String> {
         html.push_str(&format!("<h1>{}</h1>", title));
         html.push_str(&content);
     }
+
+    // Add syntax highlighting
     Html(r#"
     <html>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">

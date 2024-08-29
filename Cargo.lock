@@ -788,6 +788,7 @@ dependencies = [
  "shuttle-axum",
  "shuttle-runtime",
  "tokio",
+ "tower-livereload",
  "walkdir",
 ]
 
@@ -1686,6 +1687,20 @@ name = "tower-layer"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "121c2a6cda46980bb0fcd1647ffaf6cd3fc79a013de288782836f6df9c48780e"
+
+[[package]]
+name = "tower-livereload"
+version = "0.9.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "57d7d9fecf1242d1c6a3cf8f7f3c2da94e6aac553bb7062ab6d03e16b9872fd0"
+dependencies = [
+ "bytes",
+ "http 1.1.0",
+ "http-body 1.0.1",
+ "pin-project-lite",
+ "tokio",
+ "tower",
+]
 
 [[package]]
 name = "tower-service"
