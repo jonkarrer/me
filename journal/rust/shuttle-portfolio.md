@@ -46,4 +46,3 @@ pub async fn serve() -> Html<String> {
 Now we need a way to route to these files, and a place to store them. Since I don't want to deploy the site every time I make a new entry, we need a place to store the entries and then load them on demand. 
 
 - [turso](https://app.turso.tech) looks like it will work
-
