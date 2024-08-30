@@ -1,4 +1,9 @@
 [workspace]
-members = ["backend", "frontend", "shared"]
+members = ["backend", "frontend", "shared", "database"]
 
 
+[workspace.dependencies]
+libsql = "0.5.0"
+serde = { version = "1.0.209", features = ["derive"] }
+tokio = "1.40.0"
+walkdir = "2.5.0"
