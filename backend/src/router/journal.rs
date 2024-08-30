@@ -1,7 +1,7 @@
-use std::{path::Path, sync::Arc};
+use std::sync::Arc;
 
 use axum::{
-    extract::State,
+    extract::{Path, State},
     http::{Result, StatusCode},
     response::{Html, IntoResponse},
 };
@@ -9,7 +9,7 @@ use libsql::params;
 use walkdir::WalkDir;
 
 struct JournalEntrySummary {
-    id: String,
+    id: u32,
     title: String,
     summary: String,
 }
@@ -53,18 +53,25 @@ pub async fn all_journal_entries_from_db(
     for entry in entries {
         html.push_str(&format!("<h1>{}</h1>", entry.title));
         html.push_str(&format!("<p>{}</p>", entry.summary));
+        html.push_str(&format!(
+            "<a href=\"/journal/{}\">Read this</a><br>",
+            entry.id
+        ));
     }
 
     Html(html)
 }
 
-pub async fn get_journal_entry(State(client): State<Arc<libsql::Database>>) -> impl IntoResponse {
+pub async fn get_journal_entry(
+    Path(id): Path<u32>,
+    State(client): State<Arc<libsql::Database>>,
+) -> impl IntoResponse {
     let db = client.connect().expect("Failed to connect to database");
 
     let mut row = db
         .query(
             "SELECT title, content FROM journal_entries WHERE id = ?1",
-            params!([1]),
+            params!(id),
         )
         .await
         .expect("Failed to query database for single entry");

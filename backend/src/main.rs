@@ -20,7 +20,8 @@ async fn main(#[shuttle_runtime::Secrets] secrets: SecretStore) -> shuttle_axum:
     let client = Arc::new(db);
 
     let mut router = Router::new()
-        .route("/", get(router::all_journal_entries_from_dir))
+        .route("/", get(router::all_journal_entries_from_db))
+        .route("/journal/:id", get(router::get_journal_entry))
         .with_state(client);
 
     if cfg!(debug_assertions) {
