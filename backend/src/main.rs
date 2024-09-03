@@ -1,7 +1,7 @@
 mod router;
 use std::sync::Arc;
 
-use axum::{routing::get, Router};
+use router::router;
 use shuttle_runtime::SecretStore;
 
 #[shuttle_runtime::main]
@@ -19,10 +19,7 @@ async fn main(#[shuttle_runtime::Secrets] secrets: SecretStore) -> shuttle_axum:
         .expect("Failed to create db client");
     let client = Arc::new(db);
 
-    let mut router = Router::new()
-        .route("/", get(router::all_journal_entries_from_db))
-        .route("/journal/:id", get(router::get_journal_entry))
-        .with_state(client);
+    let mut router = router().with_state(client);
 
     if cfg!(debug_assertions) {
         router = router.layer(tower_livereload::LiveReloadLayer::new());

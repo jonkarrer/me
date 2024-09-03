@@ -2,7 +2,7 @@ use std::sync::Arc;
 
 use axum::{
     extract::{Path, State},
-    http::{Result, StatusCode},
+    http::StatusCode,
     response::{Html, IntoResponse},
 };
 use libsql::params;

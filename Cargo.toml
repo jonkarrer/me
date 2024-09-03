@@ -1,5 +1,5 @@
 [workspace]
-members = ["backend", "frontend", "shared", "database"]
+members = ["backend",  "shared", "cli"]
 
 
 [workspace.dependencies]
