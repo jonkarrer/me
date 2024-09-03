@@ -554,21 +554,101 @@ video {
   --tw-contain-style:  ;
 }
 
-.bg-red-500 {
+.m-4 {
+  margin: 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.bg-zinc-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.p-20 {
+  padding: 5rem;
 }
 
-.font-bold {
-  font-weight: 700;
+.p-12 {
+  padding: 3rem;
+}
+
+.text-slate-50 {
+  --tw-text-opacity: 1;
+  color: rgb(248 250 252 / var(--tw-text-opacity));
+}
+
+@font-face {
+  font-family: 'regular-font';
+
+  src: url('/assets/font/ServerMono-Regular.woff2') format('woff2'),
+        url('/assets/font/ServerMono-Regular.woff') format('woff');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'italic-font';
+
+  src: url('/assets/font/ServerMono-Regular-Italic.woff2') format('woff2'),
+        url('/assets/font/ServerMono-Regular-Italic.woff') format('woff');
+
+  font-weight: normal;
+
+  font-style: normal;
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+div,
+span {
+  font-family: 'regular-font';
+  font-weight: 400;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h5,
+h6 {
+  font-family: 'regular-font';
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0.6;
 }

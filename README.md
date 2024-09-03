@@ -28,4 +28,4 @@ This is where the html and css files are stored, as well as the tailwind binary 
 
 ### Cli
 
-This is a tool to help manage the database. 
+This is a tool to help manage the database.
