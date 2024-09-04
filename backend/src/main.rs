@@ -1,4 +1,8 @@
+mod models;
 mod router;
+mod routes;
+mod templates;
+
 use std::sync::Arc;
 
 use router::router;
