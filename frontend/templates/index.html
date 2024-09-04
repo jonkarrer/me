@@ -11,7 +11,7 @@
 
 <body>
 
-    <main class="max-w-3xl mx-auto p-12">
+    <main class="max-w-3xl mx-auto p-6 md:px-12">
         <header class="flex justify-between border-b-2">
             Jon Karrer
             <nav>
@@ -19,42 +19,165 @@
                 <a href="/projects">Projects</a>
             </nav>
         </header>
-        <section class="border-b-2 ">
-            <article>
+        <section class="border-b-2 py-8">
+            <article class="grid gap-2">
                 <h2>About</h2>
                 <p>
                     I'm Jon, another programmer on another slice of the internet. Probably solving another problem, or
-                    creating another thing. Take a look around at some of my stuff, or just say hi.
+                    creating another thing. Have been programming for 5
+                    years professionally, and will likely do another, in a loop. Take a look around at some of my stuff,
+                    or just say hi.
                 </p>
+                <img src="/assets/image/looking_out.jpg" alt="pixel art of a robot">
             </article>
         </section>
 
-        <section class="border-b-2">
-            <article>
+        <section class="border-b-2 py-8">
+            <article class="grid gap-2 pb-2">
                 <h2>Projects</h2>
-                <h3>
-                    Here are some of my frontend projects.
-                </h3>
+                <p>
+                    Some frontend focused projects....
+                </p>
             </article>
-            <div>
-                <div>Project One</div>
-                <div>Project Two</div>
-                <div>Project Three</div>
+
+            <div class="grid gap-4">
+                <article class="grid gap-2">
+                    <h3>Auidophile</h3>
+                    <p>
+                        My first large project with a framework. It was a challenge project from the website
+                        <a class="underline" href="https://www.frontendmentor.io/">frontend mentors</a>. Decided to use
+                        Next.js with TypeScript and Tailwind for this one.
+                    </p>
+                    <div>
+                        <span class="underline"><a href="https://github.com/jonkarrer/audiophile">Github</a></span>
+                        <span class="underline"><a href="https://silly-dubinsky-a8c901.netlify.app/">Website</a></span>
+                    </div>
+                </article>
+
+                <article class="grid gap-2">
+                    <h3>Old Portfolio</h3>
+                    <p>
+                        This is the first edition of my portfolio that landed me the front end engineering role I have
+                        now. The framework of choice for this one was Svelte, my personal favorite. Most of the links
+                        are outdated by now.
+                    </p>
+                    <div>
+                        <span class="underline">
+                            <a href="https://github.com/jonkarrer/svelte_portfolioe">Github</a></span>
+                        <span class="underline"><a href="https://www.jonkarrer.com/">Website</a></span>
+                    </div>
+                </article>
+
+                <article class="grid gap-2">
+                    <h3>My Team</h3>
+                    <p>
+                        A simple marketing page that was used practice the fundamentals of HTML and CSS. Another great
+                        project from frontend mentor, which I frequently use to stay sharp and up to date.
+                    </p>
+                    <div>
+                        <span class="underline"><a href="https://github.com/jonkarrer/myTeam">Github</a></span>
+                        <span class="underline"><a href="jonkarrer.github.io/myTeam//">Website</a></span>
+                    </div>
+                </article>
+                <img src="/assets/image/saturn.jpg" alt="pixel art of saturn">
             </div>
 
-            <h3>Some backend projects</h3>
-            <div>
-                <div>Project One</div>
-                <div>Project Two</div>
-                <div>Project Three</div>
+
+            <article class="grid gap-2 pb-2 pt-6">
+                <p>
+                    Some backend focused projects....
+                </p>
+            </article>
+
+            <div class="grid gap-4">
+                <article class="grid gap-2">
+                    <h3>Prep App</h3>
+                    <p>
+                        This is a fullstack application in Rust, my favorite language. Tried to go as minimalistic as
+                        possible, and had a ton of fun. Was hosting this on an amazon ec2 instance, but cost was not
+                        worth it.
+                    </p>
+                    <div>
+                        <span class="underline"><a href="https://github.com/jonkarrer/prep">Github</a></span>
+                    </div>
+                </article>
+
+                <article class="grid gap-2">
+                    <h3>Recipe Api</h3>
+                    <p>
+                        Wanted to explore PHP and Docker. It is an PHP is an appealing scripting language for
+                        backend applications, specifically APIs that service web applications. Docker is a great modern
+                        tech that simplifies the deployment of applications.
+                    </p>
+                    <div>
+                        <span class="underline"><a href="https://github.com/jonkarrer/prep_api">Github</a></span>
+                    </div>
+                </article>
+
+                <article class="grid gap-2">
+                    <h3>Yafa</h3>
+                    <p>
+                        The stock market is full of data that can be used in various ways. This particular project would
+                        use a Rust Api to get data and transform it into views. Got a chance to use Bun.js and more
+                        TypeScript.
+                    </p>
+                    <div>
+                        <span class="underline"><a href="https://github.com/jonkarrer/yafa">Github</a></span>
+                    </div>
+                </article>
+                <img src="/assets/image/space_parts.jpg" alt="random space parts">
             </div>
 
-            <h3>Some of my libraries</h3>
-            <div>
-                <div>Project One</div>
-                <div>Project Two</div>
-                <div>Project Three</div>
+            <article class="grid gap-2 pb-2 pt-6">
+                <p>
+                    Some open source focused projects....
+                </p>
+            </article>
+
+            <div class="grid gap-4">
+                <article class="grid gap-2">
+                    <h3>Brize Auth</h3>
+                    <p>
+                        A simple auth server in Rust. Still a work in progress, but functions really well as is. Built
+                        for MySQL and SurrealDB databases for now. Was a good project to understand how authentication
+                        works at a low level.
+                    </p>
+                    <div>
+                        <span class="underline"><a href="https://github.com/xbrize/brize_auth">Github</a></span>
+                        <span class="underline"><a href="https://crates.io/crates/brize_auth">Crates.io</a></span>
+                    </div>
+                </article>
+
+                <article class="grid gap-2">
+                    <h3>Alpaca Api</h3>
+                    <p>
+                        <a class="underline" href="https://alpaca.markets/">Alpaca</a> is a service that
+                        provides endpoints for stock market data. They do not have an official Rust SDK, so I scrapped
+                        one together.
+                    </p>
+                    <div>
+                        <span class="underline"><a
+                                href="https://github.com/jonkarrer/alpaca_api_client">Github</a></span>
+                        <span class="underline"><a
+                                href="https://crates.io/crates/alpaca_api_client">Crates.io</a></span>
+                    </div>
+                </article>
+
+                <article class="grid gap-2">
+                    <h3>Tindi</h3>
+                    <p>
+                        I made a simple technical analysis indicator library in Rust. It uses various algorithms to
+                        generate technical indicators which are stock market signals to buy and sell.
+                    </p>
+                    <div>
+                        <span class="underline"><a href="https://github.com/jonkarrer/tindi">Github</a></span>
+                        <span class="underline"><a href="https://crates.io/crates/tindi">Crates.io</a></span>
+                    </div>
+                </article>
+                <img src="/assets/image/island.jpg" alt="pixel art of a space base">
             </div>
+
+
         </section>
 
         <section class="border-b-2">
