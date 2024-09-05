@@ -70,7 +70,7 @@ pub async fn single_journal_entry(
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
         <link rel="stylesheet" href="/styles/output.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <body>"#.to_string() + &parse_markdown_to_html(&content) + "<script>hljs.highlightAll();</script></body>
+        <body><main>"#.to_string() + &parse_markdown_to_html(&content) + "</main><script>hljs.highlightAll();</script></body>
     </html>";
 
         return Ok(Html(html));
