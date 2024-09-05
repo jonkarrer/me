@@ -16,6 +16,9 @@ enum Commands {
     Init,
     Remove { id: u32 },
     Refresh,
+    UpdateSummary { id: u32, summary: String },
+    UpdateContent { id: u32, file_name: String },
+    UpdateTitle { id: u32, title: String },
 }
 
 #[tokio::main]
@@ -32,7 +35,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     match &cli.command {
         Some(Commands::Add { title, summary }) => {
-            let file = std::fs::File::open(format!("database/journal/{}.md", title))?;
+            let file = std::fs::File::open(format!("frontend/assets/journal/{}.md", title))?;
             let content = std::io::read_to_string(file)?;
             let title = title.replace("-", " ");
 
@@ -45,7 +48,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         Some(Commands::Refresh) => {
             let mut entries = Vec::new();
 
-            for entry in WalkDir::new("database/journal")
+            for entry in WalkDir::new("frontend/assets/journal")
                 .into_iter()
                 .filter_map(|e| e.ok())
             {
@@ -95,6 +98,29 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         Some(Commands::Remove { id }) => {
             conn.execute("DELETE FROM journal_entries WHERE id = ?1", params![id])
                 .await?;
+        }
+        Some(Commands::UpdateSummary { id, summary }) => {
+            conn.execute(
+                "UPDATE journal_entries SET summary = ?2 WHERE id = ?1",
+                params![id, summary.clone()],
+            )
+            .await?;
+        }
+        Some(Commands::UpdateContent { id, file_name }) => {
+            let file = std::fs::File::open(format!("frontend/assets/journal/{}.md", file_name))?;
+            let content = std::io::read_to_string(file)?;
+            conn.execute(
+                "UPDATE journal_entries SET content = ?2 WHERE id = ?1",
+                params![id, content.clone()],
+            )
+            .await?;
+        }
+        Some(Commands::UpdateTitle { id, title }) => {
+            conn.execute(
+                "UPDATE journal_entries SET title = ?2 WHERE id = ?1",
+                params![id, title.clone()],
+            )
+            .await?;
         }
         None => {
             println!("No command specified. Use --help for usage information.");

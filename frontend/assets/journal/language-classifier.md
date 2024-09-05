@@ -55,7 +55,7 @@ First we need to gather and split the data into training and validation sets. Us
             record.context, record.target, record.anchor
         );
 
-        classified_data.push(ClassifiedText {
+        classified_data.push(ClassifiedText {neural 
             text,
             label: record.score,
         })

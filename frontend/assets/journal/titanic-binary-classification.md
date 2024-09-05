@@ -151,29 +151,10 @@ Configuration:
 - Features: 6
 - Hidden Size: 64
 
-```shell
-[Train - Epoch 0] Loss 31.089 | Accuracy 38.221 %
-*** [Validate - Epoch 0] Loss 5.670 | Accuracy 37.778 %
-[Train - Epoch 1] Loss 7.438 | Accuracy 38.221 %
-*** [Validate - Epoch 1] Loss 2.156 | Accuracy 37.778 %
-[Train - Epoch 2] Loss 2.521 | Accuracy 38.221 %
-*** [Validate - Epoch 2] Loss 1.223 | Accuracy 37.778 %
-[Train - Epoch 3] Loss 1.389 | Accuracy 38.221 %
-*** [Validate - Epoch 3] Loss 0.906 | Accuracy 37.778 %
-[Train - Epoch 4] Loss 1.050 | Accuracy 36.341 %
-*** [Validate - Epoch 4] Loss 0.756 | Accuracy 34.444 %
-[Train - Epoch 5] Loss 0.892 | Accuracy 35.464 %
-*** [Validate - Epoch 5] Loss 0.664 | Accuracy 32.222 %
-[Train - Epoch 6] Loss 0.788 | Accuracy 34.461 %
-*** [Validate - Epoch 6] Loss 0.597 | Accuracy 34.444 %
-[Train - Epoch 7] Loss 0.707 | Accuracy 35.088 %
-*** [Validate - Epoch 7] Loss 0.546 | Accuracy 34.444 %
-[Train - Epoch 8] Loss 0.641 | Accuracy 35.213 %
-*** [Validate - Epoch 8] Loss 0.504 | Accuracy 34.444 %
-[Train - Epoch 9] Loss 0.588 | Accuracy 35.088 %
-*** [Validate - Epoch 9] Loss 0.471 | Accuracy 34.444 %
-[Train - Epoch 10] Loss 0.544 | Accuracy 35.464 %
-```
+Score:
+
+- Training set: 35%
+- Validation set: 36%
 
 ### Run Two
 
@@ -187,38 +168,10 @@ Configuration:
 - Features: 6
 - Hidden Size: 64
 
-```shell
-[Train - Epoch 0] Loss 2.759 | Accuracy 38.221 %
-*** [Validate - Epoch 0] Loss 2.184 | Accuracy 37.778 %
-[Train - Epoch 1] Loss 2.503 | Accuracy 38.221 %
-*** [Validate - Epoch 1] Loss 1.969 | Accuracy 37.778 %
-[Train - Epoch 2] Loss 2.251 | Accuracy 38.221 %
-*** [Validate - Epoch 2] Loss 1.760 | Accuracy 37.778 %
-[Train - Epoch 3] Loss 2.004 | Accuracy 38.221 %
-*** [Validate - Epoch 3] Loss 1.557 | Accuracy 36.667 %
-[Train - Epoch 4] Loss 1.763 | Accuracy 38.221 %
-*** [Validate - Epoch 4] Loss 1.364 | Accuracy 36.667 %
-[Train - Epoch 5] Loss 1.531 | Accuracy 38.221 %
-*** [Validate - Epoch 5] Loss 1.183 | Accuracy 35.556 %
-[Train - Epoch 6] Loss 1.312 | Accuracy 37.970 %
-*** [Validate - Epoch 6] Loss 1.021 | Accuracy 35.556 %
-[Train - Epoch 7] Loss 1.111 | Accuracy 37.719 %
-*** [Validate - Epoch 7] Loss 0.884 | Accuracy 42.222 %
-[Train - Epoch 8] Loss 0.936 | Accuracy 41.353 %
-*** [Validate - Epoch 8] Loss 0.783 | Accuracy 54.444 %
-[Train - Epoch 9] Loss 0.801 | Accuracy 58.772 %
-*** [Validate - Epoch 9] Loss 0.724 | Accuracy 63.333 %
-[Train - Epoch 10] Loss 0.719 | Accuracy 60.150 %
-*** [Validate - Epoch 10] Loss 0.686 | Accuracy 63.333 %
-[Train - Epoch 11] Loss 0.674 | Accuracy 62.406 %
-*** [Validate - Epoch 11] Loss 0.646 | Accuracy 63.333 %
-[Train - Epoch 12] Loss 0.644 | Accuracy 63.659 %
-*** [Validate - Epoch 12] Loss 0.640 | Accuracy 64.444 %
-[Train - Epoch 13] Loss 0.630 | Accuracy 62.907 %
-*** [Validate - Epoch 13] Loss 0.606 | Accuracy 61.111 %
-[Train - Epoch 14] Loss 0.631 | Accuracy 66.291 %
-*** [Validate - Epoch 14] Loss 0.629 | Accuracy 64.444 %
-```
+Score:
+
+- Training set: 66%
+- Validation set: 64%
 
 ### Run Three
 
@@ -232,28 +185,10 @@ Configuration:
 - Features: 6
 - Hidden Size: 64
 
-```shell
-[Train - Epoch 0] Loss 2.759 | Accuracy 38.221 %
-*** [Validate - Epoch 0] Loss 1.678 | Accuracy 37.778 %
-[Train - Epoch 1] Loss 1.906 | Accuracy 38.221 %
-*** [Validate - Epoch 1] Loss 1.082 | Accuracy 35.556 %
-[Train - Epoch 2] Loss 1.184 | Accuracy 38.095 %
-*** [Validate - Epoch 2] Loss 0.774 | Accuracy 60.000 %
-[Train - Epoch 3] Loss 0.779 | Accuracy 56.140 %
-*** [Validate - Epoch 3] Loss 0.723 | Accuracy 61.111 %
-[Train - Epoch 4] Loss 0.710 | Accuracy 61.905 %
-*** [Validate - Epoch 4] Loss 0.689 | Accuracy 62.222 %
-[Train - Epoch 5] Loss 0.679 | Accuracy 62.030 %
-*** [Validate - Epoch 5] Loss 0.671 | Accuracy 63.333 %
-[Train - Epoch 6] Loss 0.660 | Accuracy 62.281 %
-*** [Validate - Epoch 6] Loss 0.657 | Accuracy 64.444 %
-[Train - Epoch 7] Loss 0.648 | Accuracy 63.158 %
-*** [Validate - Epoch 7] Loss 0.648 | Accuracy 63.333 %
-[Train - Epoch 8] Loss 0.640 | Accuracy 63.158 %
-*** [Validate - Epoch 8] Loss 0.640 | Accuracy 63.333 %
-[Train - Epoch 9] Loss 0.635 | Accuracy 63.409 %
-*** [Validate - Epoch 9] Loss 0.634 | Accuracy 63.333 %
-```
+Score:
+
+- Training set: 63%
+- Validation set: 63%
 
 ### Run Four
 
@@ -267,28 +202,10 @@ Configuration:
 - Features: 6
 - Hidden Size: 64
 
-```shell
-[Train - Epoch 0] Loss 2.759 | Accuracy 38.221 %
-*** [Validate - Epoch 0] Loss 0.902 | Accuracy 40.000 %
-[Train - Epoch 1] Loss 0.953 | Accuracy 36.341 %
-*** [Validate - Epoch 1] Loss 1.110 | Accuracy 62.222 %
-[Train - Epoch 2] Loss 1.258 | Accuracy 61.779 %
-*** [Validate - Epoch 2] Loss 1.243 | Accuracy 62.222 %
-[Train - Epoch 3] Loss 1.355 | Accuracy 61.779 %
-*** [Validate - Epoch 3] Loss 0.983 | Accuracy 62.222 %
-[Train - Epoch 4] Loss 1.000 | Accuracy 61.779 %
-*** [Validate - Epoch 4] Loss 0.692 | Accuracy 63.333 %
-[Train - Epoch 5] Loss 0.802 | Accuracy 67.544 %
-*** [Validate - Epoch 5] Loss 0.633 | Accuracy 67.778 %
-[Train - Epoch 6] Loss 0.879 | Accuracy 67.794 %
-*** [Validate - Epoch 6] Loss 0.671 | Accuracy 71.111 %
-[Train - Epoch 7] Loss 0.996 | Accuracy 68.421 %
-*** [Validate - Epoch 7] Loss 0.709 | Accuracy 73.333 %
-[Train - Epoch 8] Loss 1.075 | Accuracy 67.544 %
-*** [Validate - Epoch 8] Loss 0.714 | Accuracy 74.444 %
-[Train - Epoch 9] Loss 1.087 | Accuracy 67.043 %
-*** [Validate - Epoch 9] Loss 0.680 | Accuracy 72.222 %
-```
+Score:
+
+- Training set: 67%
+- Validation set: 72%
 
 ## Submission
 

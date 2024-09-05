@@ -15,3 +15,16 @@ list-journal-table:
 
 add-journal-table title summary:
     cargo run --bin cli -- add "{{title}}" "{{summary}}"
+
+remove-journal-table id:
+    cargo run --bin cli -- remove "{{id}}"
+
+update-summary-journal-table id summary:
+    cargo run --bin cli -- update-summary "{{id}}" "{{summary}}"
+
+update-title-journal-table id title:
+    cargo run --bin cli -- update-title "{{id}}" "{{title}}"
+
+update-content-journal-table id file_name:
+    cargo run --bin cli -- update-content "{{id}}" "{{file_name}}"
+

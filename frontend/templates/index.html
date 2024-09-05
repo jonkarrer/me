@@ -11,12 +11,12 @@
 
 <body>
 
-    <main class="max-w-3xl mx-auto p-6 md:px-12">
+    <main>
         <header class="flex justify-between border-b-2">
             Jon Karrer
             <nav>
                 <a href="/journal">Journal</a>
-                <a href="/projects">Projects</a>
+                <a href="#projects">Projects</a>
             </nav>
         </header>
         <section class="border-b-2 py-8">
@@ -24,15 +24,14 @@
                 <h2>About</h2>
                 <p>
                     I'm Jon, another programmer on another slice of the internet. Probably solving another problem, or
-                    creating another thing. Have been programming for 5
-                    years professionally, and will likely do another, in a loop. Take a look around at some of my stuff,
-                    or just say hi.
+                    creating another thing. Been programming for 5 years professionally, and will do
+                    another, in a loop. Take a look around at some of my stuff, or just say hi.
                 </p>
             </article>
             <img class="pt-8" src="/assets/image/looking_out.jpg" alt="pixel art of a robot">
         </section>
 
-        <section class="border-b-2 pt-8">
+        <section id="projects" class="border-b-2 pt-8">
             <h2 class="pb-8">Projects</h2>
 
             <p class="pb-6">
@@ -171,7 +170,7 @@
             </div>
 
             <p class="pb-6">
-                Machine learning focused projects....
+                Some machine learning focused projects....
             </p>
             <div class="grid gap-8 pb-8">
                 <article class="grid gap-2">
@@ -247,9 +246,13 @@
         </section>
         <section class="grid gap-2 border-b-2 py-8">
             <h2>Contact me</h2>
-            <menu>
-                <span class="underline"><a href="https://www.linkedin.com/in/jonkarrer">LinkedIn</a></span>
-                <span class="underline"><a href="https://github.com/jonkarrer">GitHub</a></span>
+            <menu class="grid gap-4 md:flex justify-between flex-wrap">
+                <div>
+                    <span class="underline"><a href="https://www.linkedin.com/in/jonkarrer">LinkedIn</a></span>
+                    <span class="underline"><a href="https://github.com/jonkarrer">GitHub</a></span>
+                </div>
+
+
                 <span class="underline"><a href="mailto:9sZoN@example.com">karrerdigital@gmail.com</a></span>
             </menu>
         </section>
