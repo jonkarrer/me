@@ -6,7 +6,6 @@ use axum::{
     response::{Html, IntoResponse},
 };
 use libsql::params;
-use walkdir::WalkDir;
 
 use crate::{
     models::JournalEntry,
@@ -63,15 +62,47 @@ pub async fn single_journal_entry(
         .expect("Failed to query database for single entry");
 
     if let Some(row) = row.next().await.expect("Failed to get next row") {
+        let title: String = row.get(0).expect("Failed to get title");
         let content: String = row.get(1).expect("Failed to get content");
 
-        let html =r#"
-    <html>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-        <link rel="stylesheet" href="/styles/output.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <body><main>"#.to_string() + &parse_markdown_to_html(&content) + "</main><script>hljs.highlightAll();</script></body>
-    </html>";
+        let html = format!(
+            r#"
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/prismjs@v1.x/themes/prism-tomorrow.css" rel="stylesheet" />
+            <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/components/prism-core.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+            <link rel="stylesheet" href="/styles/output.css">
+            <title>{}</title>
+        </head>
+        <body>
+        <main>
+        <header>
+            <a href="/">Jon Karrer</a>
+            <nav>
+                <a href="/journal">Journal</a>
+                <a href="/#projects">Projects</a>
+            </nav>
+        </header>
+        
+        <section class="border-b-2 py-8">
+        {}
+        </section>
+        <footer>
+            <p>© 2024 Jon Karrer</p>
+            <p>Built with Rust 🦀</p>
+        </footer>
+        </main>
+        <script>Prism.highlightAll();</script> 
+        </body>
+        </html>
+        "#,
+            title,
+            &parse_markdown_to_html(&content)
+        );
 
         return Ok(Html(html));
     } else {

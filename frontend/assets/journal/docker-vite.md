@@ -1,13 +1,10 @@
 # Dockerize A Vite App
 
-## Prerequisites
-
-- [Vite](https://vitejs.dev/)
-- [Docker](https://www.docker.com/)
+Vite and docker can be used together to build a web app. This is a simple example of how to do it.
 
 ## Setup
 
-```sh
+```bash
 yarn create vite my-app
 cd my-app
 yarn
@@ -16,7 +13,7 @@ yarn dev
 
 ## Dockerfile
 
-```dockerfile
+```docker
 FROM node:lts-alpine as build
 WORKDIR /app
 COPY . .
@@ -31,7 +28,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ## Deploy
 
-```sh
+```bash
 docker build -t portfolio .
 docker run -d -p 82100:80 portfolio
 ```

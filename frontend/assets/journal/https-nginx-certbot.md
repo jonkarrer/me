@@ -207,7 +207,7 @@ services:
 
 Set up nginx.conf
 
-```conf
+```nginx
 server {
     listen 80;
     server_name theprep.app www.theprep.app;
@@ -262,7 +262,7 @@ nginx:
 
 Add to nginx.conf
 
-```conf
+```nginx
 upstream loadbalancer {
   server web:8000;
 }
