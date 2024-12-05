@@ -3,7 +3,7 @@ members = ["backend",  "shared", "cli"]
 
 
 [workspace.dependencies]
-libsql = "0.5.0"
+libsql = "0.6.0"
 serde = { version = "1.0.209", features = ["derive"] }
-tokio = "1.40.0"
+tokio = "1.42.0"
 walkdir = "2.5.0"

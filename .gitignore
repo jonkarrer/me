@@ -4,4 +4,4 @@ Secrets*.toml
 .env
 *.env
 *.env.*
-tailwindcss
+tailwindcss.shuttle*
