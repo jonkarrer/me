@@ -2,13 +2,19 @@
 
 ## Install AWS CLI
 
-Using homebrew `brew install awscli`
+Using homebrew
 
-Verify installation with `aws --version`
+```bash
+brew install awscli
+```
+
+```bash
+aws --version
+```
 
 ## Configure Auth
 
-If you run `aws configure` you will get this output
+If you run **aws configure** you will get this output
 
 ```zsh
 AWS Access Key ID [None]:

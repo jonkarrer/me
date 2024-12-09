@@ -75,7 +75,7 @@ pub async fn single_journal_entry(
             <link href="https://cdn.jsdelivr.net/npm/prismjs@v1.x/themes/prism-tomorrow.css" rel="stylesheet" />
             <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/components/prism-core.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
-            <link rel="stylesheet" href="/styles/output.css">
+            <link rel="stylesheet" href="/styles/journal_entries.css">
             <title>{}</title>
         </head>
         <body>
@@ -88,7 +88,7 @@ pub async fn single_journal_entry(
             </nav>
         </header>
         
-        <section class="border-b-2 py-8">
+        <section>
         {}
         </section>
         <footer>

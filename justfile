@@ -1,5 +1,5 @@
 start-server:
-    cargo watch -qcx 'shuttle run'
+    shuttle run
 start-tailwind:
     frontend/tailwindcss -c frontend/tailwind.config.js -i frontend/styles/input.css -o frontend/styles/output.css --watch
 
