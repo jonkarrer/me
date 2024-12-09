@@ -1,8 +1,14 @@
 # Algo Trading Bot
 
-The stock market is a data making machine. Every day, there are millions of trades happening, and even more is happening around those trades. This has always fascinated me. I wanted to get a better understanding of what's going on in the market, so I built a bot that would analyze the market and make decisions based on the data. There are many different ways to do this, and I have tried dozens. This is just a brief overview of what I did. Any algorithmn can be plugged into the pipeline.
+The stock market is a data making machine. Every day, there are millions of trades happening, and even more is happening around those trades. This has always fascinated me. I wanted to get a better understanding of what's going on in the market, so I built a bot that would analyze the market and make decisions based on the data. There are many different ways to do this, and I have tried dozens. This is just a brief overview of what I did. Any algorithm can be plugged into the pipeline.
 
-I already created an Alpaca API SDK in Rust here [Alpaca API Rust SDK](https://crates.io/crates/alpaca_api_client). It has become a very valuable tool in my years of exploring the stock market. I have also created a tiny but helpful technical indicators library here [Technical Indicators](https://crates.io/crates/tindi).
+I already created an Alpaca API SDK in Rust here:
+
+<https://crates.io/crates/alpaca_api_client>
+
+I have also created a tiny but helpful technical indicators library here:
+
+<https://crates.io/crates/tindi>
 
 ## What is a Bot?
 

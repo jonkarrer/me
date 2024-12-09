@@ -13,7 +13,7 @@ refresh-journal-table:
 list-journal-table:
     cargo run --bin cli -- list
 
-add-journal-table title summary:
+add-journal-entry title summary:
     cargo run --bin cli -- add "{{title}}" "{{summary}}"
 
 remove-journal-table id:
