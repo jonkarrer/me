@@ -27,7 +27,7 @@ pub async fn all_journal_entries(
 
     let mut rows = db
         .query(
-            "SELECT id, title, summary, content FROM journal_entries",
+            "SELECT id, title, summary, content FROM journal_entries ORDER BY id DESC",
             (),
         )
         .await
@@ -38,7 +38,18 @@ pub async fn all_journal_entries(
         let content: String = row.get(3).expect("Failed to get content");
         entries.push(JournalEntry {
             id: row.get(0).expect("Failed to get id"),
-            title: row.get(1).expect("Failed to get title"),
+            title: row
+                .get::<String>(1)
+                .expect("Failed to get title")
+                .split_whitespace()
+                .map(|s| {
+                    let mut chars = s.chars();
+                    let first = chars.next().unwrap().to_uppercase();
+                    let rest = chars.collect::<String>();
+                    format!("{}{}", first, rest)
+                })
+                .collect::<Vec<String>>()
+                .join(" "),
             summary: row.get(2).expect("Failed to get summary"),
             content: parse_markdown_to_html(content.as_str()),
         })

@@ -31,8 +31,8 @@
             <article class="grid gap-2">
                 <h2>Journal</h2>
                 <p>
-                    I like to journal while I'm coding. It helps organize my thoughts and keep track of my progress.
-                    It's been a good tool for remembering where I left off when switching between projects. Here is a
+                    I like to journal while coding. It helps organize ideas and keep track of progress.
+                    Also a great tool for remembering context when switching between projects. Here is a
                     collection of some of those entries.
                 </p>
             </article>
@@ -44,7 +44,7 @@
 
             {% for entry in entries %}
             <a class="pb-8 pt-5 block border-b-[1px] border-dashed" href="/journal/{{ entry.id }}">
-                <h3>{{ entry.title }}</h3>
+                <h3 class="pb-2">{{ entry.title }}</h3>
                 <p>{{ entry.summary }}</p>
             </a>
             {% endfor %}
