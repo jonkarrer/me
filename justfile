@@ -1,7 +1,14 @@
 start-server:
-    cargo watch -qcx 'shuttle run'
+    shuttle run
 start-tailwind:
     frontend/tailwindcss -c frontend/tailwind.config.js -i frontend/styles/input.css -o frontend/styles/output.css --watch
+
+download-envs:
+    doppler secrets download --no-file --format json > secrets.json
+convert-envs:
+    ./json2toml.sh secrets.json
+setup-envs:
+    just download-envs && just convert-envs
 
 # Database CLI
 init-journal-table:

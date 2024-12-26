@@ -5,3 +5,4 @@ Secrets*.toml
 *.env
 *.env.*
 tailwindcss.shuttle*
+secrets*.json
