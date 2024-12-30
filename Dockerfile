@@ -1,8 +1,7 @@
-FROM rust:slim-bookworm AS builder
+FROM scratch
 
-WORKDIR /app
-
-COPY . .
+COPY ./target/release/me /
+CMD ["/me"]
 
 # Install Doppler CLI
 # RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg && \
@@ -11,11 +10,11 @@ COPY . .
 #     apt-get update && \
 #     apt-get -y install doppler
 
-RUN cargo build --release
+# RUN cargo build --release
 
-FROM scratch
-COPY --from=builder /app/target/release/me /
+# FROM scratch
+# COPY --from=builder /app/target/release/me /
 
-# CMD ["doppler", "run", "--", "./target/release/me"]
+# # CMD ["doppler", "run", "--", "./target/release/me"]
 
-CMD ["/me"]
+# CMD ["/me"]

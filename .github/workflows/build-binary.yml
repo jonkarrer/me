@@ -5,43 +5,29 @@ on:
     branches:
       - feat/local-server
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v3
-      
-#       - name: Install Rust
-#         uses: actions-rs/toolchain@v1
-#         with:
-#             toolchain: stable
-#             override: true
-
-#       - name: Build Binary
-#         run: cargo build --release
-
 jobs:
-  docker-build:
+  build:
     runs-on: macos-latest
 
     steps:
-      # Step 1: Checkout the code
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
+      
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+            toolchain: stable
+            override: true
 
-      - name: Docker tookchain
-        uses: docker/setup-docker-action@v4
+      - name: Build Binary
+        run: cargo build --release
 
-      # Step 2: Log in to DockerHub
       - name: Log in to DockerHub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Step 3: Build and push Docker image
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
@@ -50,3 +36,49 @@ jobs:
           push: true
           tags: karrerdigital/me:latest
           platforms: linux/arm64
+
+      #  - name: Upload Binary to Release
+      #   uses: actions/upload-release-asset@v1
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: target/release/me
+      #     asset_name: me
+      #     asset_content_type: application/octet-stream
+
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   with:
+      #     tag_name: v1.0.0  # Update with your versioning scheme
+      #     release_name: Release v1.0.0
+      #     draft: false
+      #     prerelease: false
+
+# jobs:
+#   docker-build:
+#     runs-on: macos-latest
+
+#     steps:
+#       # Step 1: Checkout the code
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Docker tookchain
+#         uses: docker/setup-docker-action@v4
+
+#       # Step 2: Log in to DockerHub
+#       - name: Log in to DockerHub
+#         uses: docker/login-action@v2
+#         with:
+#           username: ${{ secrets.DOCKER_USERNAME }}
+#           password: ${{ secrets.DOCKER_PASSWORD }}
+
+#       # Step 3: Build and push Docker image
+#       - name: Build and push Docker image
+#         uses: docker/build-push-action@v4
+#         with:
+#           context: .
+#           file: Dockerfile
+#           push: true
+#           tags: karrerdigital/me:latest
+#           platforms: linux/arm64
