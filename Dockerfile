@@ -1,6 +1,4 @@
-FROM arm64v8/ubuntu:devel AS builder
-
-ENV DEBIAN_FRONTEND=noninteractive
+FROM arm64v8/debian:devel AS builder
 
 RUN apt-get update && \
     apt-get install -y curl build-essential && \
