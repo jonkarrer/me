@@ -24,12 +24,15 @@ on:
 
 jobs:
   docker-build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Docker tookchain
+        uses: docker/setup-docker-action@v4
 
       # Step 2: Log in to DockerHub
       - name: Log in to DockerHub
