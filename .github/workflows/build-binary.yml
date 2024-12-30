@@ -24,7 +24,7 @@ on:
 
 jobs:
   docker-build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       # Step 1: Checkout the code
@@ -46,3 +46,4 @@ jobs:
           file: Dockerfile
           push: true
           tags: karrerdigital/me:latest
+          platforms: linux/arm64
