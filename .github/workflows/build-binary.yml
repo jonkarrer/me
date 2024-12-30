@@ -1,6 +1,5 @@
 name: Build Rust Binary
 permissions:
-  content:
     contents: write
 
 on:
