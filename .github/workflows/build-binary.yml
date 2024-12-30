@@ -45,4 +45,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: your-docker-username/me:latest
+          tags: karrerdigital/me:latest
