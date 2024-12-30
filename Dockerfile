@@ -1,4 +1,4 @@
-FROM arm64v8/debian:devel AS builder
+FROM arm64v8/debian:rc-buggy AS builder
 
 RUN apt-get update && \
     apt-get install -y curl build-essential && \
