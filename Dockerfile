@@ -3,7 +3,6 @@ FROM rust:slim-bookworm
 WORKDIR /app
 
 COPY . .
-RUN cargo build --release
 
 # Install Doppler CLI
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg && \
@@ -12,5 +11,6 @@ RUN apt-get update && apt-get install -y apt-transport-https ca-certificates cur
     apt-get update && \
     apt-get -y install doppler
 
-COPY /app/target/release/me /
-CMD ["doppler", "run", "--", "/me"]
+RUN cargo build --release
+
+CMD ["doppler", "run", "--", "./target/release/me"]
