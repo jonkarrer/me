@@ -1,4 +1,6 @@
 name: Build Rust Binary
+permissions:
+    contents: write
 
 on:
   push:
