@@ -21,15 +21,13 @@ jobs:
       - name: Build Binary
         run: cargo build --release
 
-      - name: Extract Tag
-        id: extract_tag
-        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-
       - name: Create Release
         id: create_release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "release.tar.gz,foo/*.txt"
+          commit: feat/local-server
+          tag: 1.0.0
 
       - name: Upload Binary to Release
         uses: actions/upload-release-asset@v1
