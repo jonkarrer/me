@@ -30,14 +30,6 @@ jobs:
       # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
-      
-      - name: "Use Rasb Pi ARM"
-      - uses: pguyot/arm-runner-action@v2
-        id: build_image
-        with:
-          base_image: raspios_lite:2022-04-04
-          commands: |
-            commands to build image
 
       # Step 2: Log in to DockerHub
       - name: Log in to DockerHub
