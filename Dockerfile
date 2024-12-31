@@ -23,8 +23,8 @@ RUN apt-get update && apt-get install -y apt-transport-https ca-certificates cur
     apt-get update && \
     apt-get -y install doppler
 
-COPY --from=builder /app/target/release/me /usr/local/bin
-COPY --from=builder /app/frontend /usr/local/bin/frontend
+COPY --from=builder /app/frontend /frontend
+COPY --from=builder /app/target/release/me /
 
 EXPOSE 5105
-CMD ["doppler", "run", "--", "/usr/local/bin/me"]
+CMD ["doppler", "run", "--", "/me"]
