@@ -1,14 +1,7 @@
 start-server:
-    shuttle run
+    doppler run -- cargo run --bin me
 start-tailwind:
     frontend/tailwindcss -c frontend/tailwind.config.js -i frontend/styles/input.css -o frontend/styles/output.css --watch
-
-download-envs:
-    doppler secrets download --no-file --format json > secrets.json
-convert-envs:
-    ./json2toml.sh secrets.json
-setup-envs:
-    just download-envs && just convert-envs
 
 # Database CLI
 init-journal-table:
@@ -34,4 +27,10 @@ update-title-journal-table id title:
 
 update-content-journal-table id file_name:
     cargo run --bin cli -- update-content "{{id}}" "{{file_name}}"
+
+# Deploy
+deploy:
+  git pull && \
+  sudo docker build -t me . && \
+  sudo docker run --env-file .env -p 5105:5105 -d --restart unless-stopped me
 
