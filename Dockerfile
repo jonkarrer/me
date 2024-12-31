@@ -16,7 +16,7 @@ RUN rustup target add aarch64-unknown-linux-gnu
 RUN cargo build --release --target=aarch64-unknown-linux-gnu
 
 # We do not need the Rust toolchain to run the binary!
-FROM debian:bookworm-slim AS runtime
+FROM arm64v8/debian:bookworm-slim AS runtime
 
 # Install Doppler CLI
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg && \
