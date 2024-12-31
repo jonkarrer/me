@@ -13,7 +13,6 @@ RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
 RUN cargo build --release
 
-# We do not need the Rust toolchain to run the binary!
 FROM debian:bookworm-slim AS runtime
 
 # Install Doppler CLI
@@ -28,19 +27,3 @@ COPY --from=builder /app/target/release/me /
 
 EXPOSE 5105
 CMD ["doppler", "run", "--", "/me"]
-
-# # Build Stage
-# FROM rust:slim-bullseye AS builder
-# WORKDIR /app
-# COPY . .
-# RUN sudo apt-get install -y gcc-aarch64-linux-gnu
-# RUN cargo build --release --target=aarch64-unknown-linux-gnu
-
-# # Deployment Stage
-# FROM arm64v8/debian:rc-buggy-20241223
-# WORKDIR /app
-# COPY --from=builder /app/target/aarch64-unknown-linux-gnu/release/me /
-# COPY --from=builder /app/frontend /frontend
-
-# EXPOSE 5105
-# ENTRYPOINT ["/me"]
