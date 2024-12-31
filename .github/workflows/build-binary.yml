@@ -25,7 +25,7 @@ jobs:
       - name: Install compiler tools (as we're cross-compiling)
         run: sudo apt install -y gcc-aarch64-linux-gnu
      
-     - name: Install rustup compiler target
+      - name: Install rustup compiler target
         run: rustup target add aarch64-unknown-linux-gnu
 
       - name: Setup caching
