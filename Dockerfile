@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y apt-transport-https ca-certificates cur
     apt-get -y install doppler
 
 COPY --from=builder /app/frontend /frontend
-COPY /app/target/aarch64-unknown-linux-gnu/release/me /me
+COPY --from=builder /app/target/aarch64-unknown-linux-gnu/release/me /me
 
 
 EXPOSE 5105
