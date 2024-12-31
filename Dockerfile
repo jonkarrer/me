@@ -17,7 +17,7 @@ RUN cargo build --release --target=aarch64-unknown-linux-gnu
 
 # We do not need the Rust toolchain to run the binary!
 FROM arm64v8/debian:bookworm-slim AS runtime
-
+RUN apt-get update && apt-get install -y curl && apt-get clean
 RUN curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh | sh
 
 COPY --from=builder /app/frontend /frontend
