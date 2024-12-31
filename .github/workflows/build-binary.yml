@@ -1,4 +1,6 @@
 name: Build Rust Binary
+permissions:
+    contents: write
 
 on:
   push:
@@ -13,6 +15,21 @@ jobs:
       # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Install Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+          targets: aarch64-unknown-linux-gnu
+      
+      - name: Install compiler tools (as we're cross-compiling)
+        run: sudo apt install -y gcc-aarch64-linux-gnu
+
+      - name: Setup caching
+        uses: Swatinem/rust-cache@v2
+
+      - name: Build release artifact
+        run: cargo build --release --target aarch64-unknown-linux-gnu
 
       # Step 2: Log in to DockerHub
       - name: Log in to DockerHub
