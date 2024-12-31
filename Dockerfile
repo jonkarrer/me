@@ -29,7 +29,7 @@
 # EXPOSE 5105
 # CMD ["doppler", "run", "--", "/me"]
 
-FROM gcr.io/distroless/cc-debian12:latest-arm64
-COPY target/aarch64-unknown-linux-gnu/release/me /
+FROM arm64v8/debian:bullseye-slim
+COPY ./target/aarch64-unknown-linux-gnu/release/me /
 COPY frontend /frontend
-ENTRYPOINT [ "/rust-gha-example" ]
+ENTRYPOINT [ "/me" ]
