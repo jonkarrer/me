@@ -33,4 +33,3 @@ deploy:
   git pull && \
   sudo docker build -t me . && \
   sudo docker run --env-file .env -p 5105:5105 -d --restart unless-stopped me
-
