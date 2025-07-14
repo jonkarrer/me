@@ -1,16 +1,16 @@
 [package]
 name = "me"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
-anyhow = "1.0.86"
-askama = "0.12.1"
-axum = "0.7.4"
+anyhow = "1.0.98"
+askama = "0.14.0"
+axum = "0.8.4"
 libsql = {workspace = true} 
-pulldown-cmark = "0.12.0"
+pulldown-cmark = "0.13.0"
 serde = { workspace = true }
 tokio = {workspace = true} 
-tower-http = { version = "0.6.2", features = ["fs"] }
-tower-livereload = "0.9.3"
+tower-http = { version = "0.6.6", features = ["fs"] }
+tower-livereload = "0.9.6"
 walkdir = {workspace = true}
