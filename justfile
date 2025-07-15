@@ -30,6 +30,7 @@ update-content-journal-table id file_name:
 
 # Deploy
 deploy:
-  git pull && \
-  sudo docker build -t me . && \
-  sudo docker run --env-file .env -p 5105:5105 -d --restart unless-stopped me
+    doppler run -p personal-website -c dev --command 'fly deploy \
+    --build-secret APP_PORT=$APP_PORT \
+    --build-secret=TURSO_AUTH_TOKEN=$TURSO_AUTH_TOKEN \
+    --build-secret=TURSO_DATABASE_URL=$TURSO_DATABASE_URL'

@@ -12,6 +12,8 @@ async fn main() -> anyhow::Result<()> {
     let db_token = std::env::var("TURSO_AUTH_TOKEN").expect("Missing TURSO_AUTH_TOKEN");
     let port = std::env::var("APP_PORT").expect("Missing APP_PORT");
 
+    println!("Connecting to {}...", db_url);
+
     let db = libsql::Builder::new_remote(db_url, db_token)
         .build()
         .await

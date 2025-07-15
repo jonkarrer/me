@@ -15,15 +15,16 @@ RUN cargo build --release
 
 FROM debian:bookworm-slim AS runtime
 
-# Install Doppler CLI
-RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg && \
-    curl -sLf --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | gpg --dearmor -o /usr/share/keyrings/doppler-archive-keyring.gpg && \
-    echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https://packages.doppler.com/public/cli/deb/debian any-version main" | tee /etc/apt/sources.list.d/doppler-cli.list && \
-    apt-get update && \
-    apt-get -y install doppler
+RUN --mount=type=secret,id=APP_PORT \
+    --mount=type=secret,id=TURSO_AUTH_TOKEN \
+    --mount=type=secret,id=TURSO_DATABASE_URL \
+    APP_PORT="$(cat /run/secrets/APP_PORT)" \
+    TURSO_AUTH_TOKEN="$(cat /run/secrets/TURSO_AUTH_TOKEN)" \
+    TURSO_DATABASE_URL="$(cat /run/secrets/TURSO_DATABASE_URL)"
+
+RUN apt-get update && apt-get install -y ca-certificates && update-ca-certificates
 
 COPY --from=builder /app/frontend /frontend
 COPY --from=builder /app/target/release/me /
 
-EXPOSE 5105
-CMD ["doppler", "run", "--", "/me"]
+ENTRYPOINT ["/me"]
