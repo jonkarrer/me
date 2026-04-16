@@ -1,30 +1,27 @@
-FROM lukemathwalker/cargo-chef:latest-rust-slim-bookworm AS chef
+# ── Build ─────────────────────────────────────────────────
+FROM oven/bun:1 AS build
+
 WORKDIR /app
 
-FROM chef AS planner
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
+
 COPY . .
-RUN cargo chef prepare --recipe-path recipe.json
+RUN bun run build
 
-FROM chef AS builder 
-COPY --from=planner /app/recipe.json recipe.json
-# Build dependencies - this is the caching Docker layer!
-RUN cargo chef cook --release --recipe-path recipe.json
-# Build application
-COPY . .
-RUN cargo build --release
+# ── Production ────────────────────────────────────────────
+FROM oven/bun:1-slim
 
-FROM debian:bookworm-slim AS runtime
+WORKDIR /app
 
-RUN --mount=type=secret,id=APP_PORT \
-    --mount=type=secret,id=TURSO_AUTH_TOKEN \
-    --mount=type=secret,id=TURSO_DATABASE_URL \
-    APP_PORT="$(cat /run/secrets/APP_PORT)" \
-    TURSO_AUTH_TOKEN="$(cat /run/secrets/TURSO_AUTH_TOKEN)" \
-    TURSO_DATABASE_URL="$(cat /run/secrets/TURSO_DATABASE_URL)"
+COPY --from=build /app/build ./build
+COPY --from=build /app/package.json ./
+COPY --from=build /app/node_modules ./node_modules
 
-RUN apt-get update && apt-get install -y ca-certificates && update-ca-certificates
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=3000
 
-COPY --from=builder /app/frontend /frontend
-COPY --from=builder /app/target/release/me /
+EXPOSE 3000
 
-ENTRYPOINT ["/me"]
+CMD ["bun", "build/index.js"]

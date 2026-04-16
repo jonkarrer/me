@@ -1,0 +1,28 @@
+{
+  "name": "me",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node build",
+    "check": "svelte-check",
+    "migrate": "bun run scripts/migrate.ts"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.17.0",
+    "@sveltejs/adapter-node": "^5",
+    "@sveltejs/kit": "^2",
+    "@sveltejs/vite-plugin-svelte": "^5",
+    "marked": "^17.0.2",
+    "svelte": "^5",
+    "vite": "^6"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "svelte-check": "^4.4.4",
+    "typescript": "^5.9.3"
+  }
+}

@@ -8,13 +8,12 @@ Use these steps to get going:
 
 - Clone the repository
 - Install dependencies, `cargo build`
-- Install tailwindcss binary at `frontend/tailwindcss`
 
 ### Scripts
 
 All the scripts are in the `justfile`
 
-To start a server that has Hot Reloading and a style engine watcher, run `just start-server` in one terminal and `just start-tailwind` in another.
+To start the server with hot reloading, run `just start-server`.
 
 ## Infastructure
 
@@ -24,7 +23,7 @@ This is the file router system. It will handle reaching out to data stores and p
 
 ### Frontend
 
-This is where the html and css files are stored, as well as the tailwind binary and config. This is where website content changes are made.
+This is where the html and css files are stored. This is where website content changes are made.
 
 ### Cli
 

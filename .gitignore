@@ -4,5 +4,12 @@ Secrets*.toml
 .env
 *.env
 *.env.*
-tailwindcss.shuttle*
 secrets*.json
+
+# Node / SvelteKit
+node_modules/
+.svelte-kit/
+build/
+.vite/
+*.db
+.DS_Store

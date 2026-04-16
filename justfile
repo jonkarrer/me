@@ -1,36 +1,61 @@
-start-server:
-    doppler run -- cargo run --bin me
-start-tailwind:
-    frontend/tailwindcss -c frontend/tailwind.config.js -i frontend/styles/input.css -o frontend/styles/output.css --watch
+# me — project commands
 
-# Database CLI
-init-journal-table:
-    cargo run --bin cli -- init
+# Default: list available commands
+default:
+    @just --list
 
-refresh-journal-table:
-    cargo run --bin cli -- refresh
+# ─── Development ─────────────────────────────────────────
 
-list-journal-table:
-    cargo run --bin cli -- list
+# Start dev server on LAN and print the reachable URL
+dev:
+    @ip=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo localhost); \
+    printf "\n  → http://%s:5173\n\n" "$ip"; \
+    doppler run --project personal-website --config dev -- bun run dev --host --port 5173 --strictPort
 
-add-journal-entry title summary:
-    cargo run --bin cli -- add "{{title}}" "{{summary}}"
+# Type-check the project
+check:
+    bun run check
 
-remove-journal-table id:
-    cargo run --bin cli -- remove "{{id}}"
+# Build for production
+build:
+    bun run build
 
-update-summary-journal-table id summary:
-    cargo run --bin cli -- update-summary "{{id}}" "{{summary}}"
+# Preview the production build
+preview:
+    doppler run --project personal-website --config dev -- bun run preview
 
-update-title-journal-table id title:
-    cargo run --bin cli -- update-title "{{id}}" "{{title}}"
+# Start the built server locally
+start:
+    doppler run --project personal-website --config dev -- node build
 
-update-content-journal-table id file_name:
-    cargo run --bin cli -- update-content "{{id}}" "{{file_name}}"
+# Install dependencies
+install:
+    bun install
 
-# Deploy
+# Remove build artifacts and deps
+clean:
+    rm -rf build .svelte-kit node_modules
+
+# ─── Database ────────────────────────────────────────────
+
+# Create tables (idempotent)
+migrate:
+    doppler run --project personal-website --config dev -- bun run scripts/migrate.ts
+
+# Import markdown journal entries from frontend/assets/journal
+import-journal:
+    doppler run --project personal-website --config dev -- bun run scripts/import-journal.ts
+
+# Patch blog titles with acronym allowlist
+fix-titles:
+    doppler run --project personal-website --config dev -- bun run scripts/fix-titles.ts
+
+# ─── Deploy ──────────────────────────────────────────────
+
+# Sync Doppler secrets to Fly
+sync-secrets:
+    doppler secrets download --project personal-website --config dev --no-file --format env-no-quotes | fly secrets import
+
+# Deploy to Fly.io
 deploy:
-    doppler run -p personal-website -c dev --command 'fly deploy \
-    --build-secret APP_PORT=$APP_PORT \
-    --build-secret=TURSO_AUTH_TOKEN=$TURSO_AUTH_TOKEN \
-    --build-secret=TURSO_DATABASE_URL=$TURSO_DATABASE_URL'
+    fly deploy
