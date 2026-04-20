@@ -13,9 +13,9 @@
 		<h2>Notes from the bench</h2>
 	</header>
 	<p>
-		I like to journal while coding. It helps organize ideas and keep track of progress — also a
-		great tool for remembering context when switching between projects. Here is a collection of
-		some of those entries.
+		I keep notes on the things I figure out so others can maybe find clues for themselves. Each
+		entry is a snapshot — a problem I was stuck on, an idea I was chasing, a tool I was poking at.
+		If any of it helps, I'm glad it's here.
 	</p>
 	<img class="mt-5 pixel-img" src="/assets/image/space_car.jpg" alt="" />
 </section>

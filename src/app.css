@@ -386,10 +386,15 @@ section > img,
 	color: var(--accent);
 }
 
-/* Journal list entry — arrow indicator + accent shift */
+/* Journal list entry — indexed with hover step */
+.reveal {
+	counter-reset: entry-counter;
+}
+
 .entry {
+	counter-increment: entry-counter;
 	display: block;
-	padding: 14px 0 16px;
+	padding: 18px 0 18px 2.75rem;
 	border-bottom: 1px dashed var(--border);
 	position: relative;
 	transition:
@@ -398,36 +403,38 @@ section > img,
 }
 
 .entry::before {
-	content: '→';
+	content: counter(entry-counter, decimal-leading-zero);
 	position: absolute;
-	left: -1.25rem;
-	top: 18px;
-	opacity: 0;
-	color: var(--accent);
+	left: 0;
+	top: 24px;
 	font-family: 'fira-code', ui-monospace, monospace;
+	font-size: 0.72rem;
+	letter-spacing: 0.15em;
+	color: var(--text-subtle);
 	transition:
-		opacity 0.25s ease,
+		color 0.25s ease,
 		left 0.25s ease;
 }
 
 .entry h3 {
+	font-size: 1.2rem;
 	transition: color 0.25s ease;
 }
 
 .entry p {
 	color: var(--text-dim);
-	font-size: 0.98rem;
-	margin-top: 0.35rem;
+	font-size: 0.95rem;
+	margin-top: 6px;
 }
 
 .entry:hover {
-	padding-left: 0.75rem;
+	padding-left: 3.25rem;
 	border-bottom-color: var(--accent-soft);
 }
 
 .entry:hover::before {
-	opacity: 1;
-	left: -0.1rem;
+	color: var(--accent);
+	left: 0.5rem;
 }
 
 .entry:hover h3 {
