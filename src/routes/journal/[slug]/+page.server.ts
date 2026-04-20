@@ -6,6 +6,8 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ params }) => {
 	const post = await getBlogBySlug(params.slug);
 	if (!post) throw error(404, 'Not Found');
-	const html = marked.parse(post.content) as string;
+	// Strip a leading "# Title" heading if present — the page header renders the title.
+	const content = post.content.replace(/^\s*#\s+.+\n+/, '');
+	const html = marked.parse(content) as string;
 	return { post, html };
 };

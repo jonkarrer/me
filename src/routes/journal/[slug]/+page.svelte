@@ -38,13 +38,15 @@
 
 <style>
 	article {
-		padding-top: 8px;
+		padding-top: 24px;
 	}
 
 	.entry-header {
-		padding: 8px 0 16px;
+		display: grid;
+		gap: 20px;
+		padding: 8px 0 24px;
 		border-bottom: 1px dashed var(--border);
-		margin-bottom: 20px;
+		margin-bottom: 28px;
 	}
 
 	.back {
