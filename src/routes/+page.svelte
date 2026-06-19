@@ -24,18 +24,6 @@
 	<p class="pb-5">Some frontend focused projects.</p>
 	<div class="grid gap-8 pb-6">
 		<article class="project grid gap-2">
-			<h3>Using AI</h3>
-			<p>
-				The central hub for my suite of AI-focused products. The purpose is to provide a landing
-				page for marketing and education. My goal is to provide every-day tools that leverage AI,
-				and wrap them in an easy-to-use interface.
-			</p>
-			<div class="pt-2">
-				<span class="underline"><a href="https://www.usingai.app/">Website</a></span>
-			</div>
-		</article>
-
-		<article class="project grid gap-2">
 			<h3>Bernt</h3>
 			<p>
 				An iOS app that plans your meals around the ingredients you already have. Talk to it in
@@ -48,14 +36,27 @@
 		</article>
 
 		<article class="project grid gap-2">
-			<h3>Lernt</h3>
+			<h3>Using AI</h3>
 			<p>
-				An AI-powered learning platform that turns a one-line prompt into a full course. Any topic
-				— Python, philosophy, music theory — gets a structured curriculum with adaptive exercises
-				and quizzes scaled to your level. Self-paced, no credit card to start.
+				The central hub for my suite of AI-focused products. The purpose is to provide a landing
+				page for marketing and education. My goal is to provide every-day tools that leverage AI,
+				and wrap them in an easy-to-use interface.
 			</p>
 			<div class="pt-2">
-				<span class="underline"><a href="https://lernt.app">Website</a></span>
+				<span class="underline"><a href="https://www.usingai.app/">Website</a></span>
+			</div>
+		</article>
+
+		<article class="project grid gap-2">
+			<h3>Global Guardians</h3>
+			<p>
+				A landing page I built for an author and their illustrator. It promotes the Global
+				Guardians children's book series — middle-grade adventure mysteries where a network of
+				young operatives race to protect the world's famous landmarks from those who'd erase
+				them, smuggling real history into the fun along the way.
+			</p>
+			<div class="pt-2">
+				<span class="underline"><a href="https://global-guardians.fly.dev">Website</a></span>
 			</div>
 		</article>
 		<img class="pixel-img" src="/assets/image/saturn.jpg" alt="pixel art of saturn" />
@@ -187,6 +188,26 @@
 		<h2>Credentials</h2>
 	</header>
 	<ul class="cert-list">
+		<li>
+			<a
+				href="https://coursera.org/share/51c0ab211acee606c898fdfda4a3f0be"
+				target="_blank"
+				rel="noopener"
+			>
+				<span class="cert-title">IBM Machine Learning Specialist</span>
+				<span class="cert-meta">IBM · Jun 2026</span>
+			</a>
+		</li>
+		<li>
+			<a
+				href="https://coursera.org/share/125abde7969d87559154a5192d37fb52"
+				target="_blank"
+				rel="noopener"
+			>
+				<span class="cert-title">Deep Learning and Reinforcement Learning</span>
+				<span class="cert-meta">IBM · Jun 2026</span>
+			</a>
+		</li>
 		<li>
 			<a
 				href="https://www.coursera.org/account/accomplishments/verify/P8FIOG1NXNBL"
