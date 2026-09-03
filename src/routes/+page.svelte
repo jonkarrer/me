@@ -36,18 +36,6 @@
 		</article>
 
 		<article class="project grid gap-2">
-			<h3>Using AI</h3>
-			<p>
-				The central hub for my suite of AI-focused products. The purpose is to provide a landing
-				page for marketing and education. My goal is to provide every-day tools that leverage AI,
-				and wrap them in an easy-to-use interface.
-			</p>
-			<div class="pt-2">
-				<span class="underline"><a href="https://www.usingai.app/">Website</a></span>
-			</div>
-		</article>
-
-		<article class="project grid gap-2">
 			<h3>Global Guardians</h3>
 			<p>
 				A landing page I built for an author and their illustrator. It promotes the Global
@@ -73,18 +61,6 @@
 			</p>
 			<div class="pt-2">
 				<span class="underline"><a href="https://market-runners.com">Website</a></span>
-			</div>
-		</article>
-
-		<article class="project grid gap-2">
-			<h3>Magic Price</h3>
-			<p>
-				A Magic: The Gathering card pricing API. An ML model trained on 100,000+ cards serves
-				fair-market predictions for collectors, traders, and deck builders. Query by card, get a
-				number.
-			</p>
-			<div class="pt-2">
-				<span class="underline"><a href="https://mtg.usingai.app">Website</a></span>
 			</div>
 		</article>
 
