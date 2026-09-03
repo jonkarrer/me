@@ -1,5 +1,17 @@
 {
   "nodes": {
+    "devshell-lib": {
+      "locked": {
+        "lastModified": 1784751735,
+        "narHash": "sha256-ATwlfFRwG7E2WaXIWzqQoeBBK2rRiUHg5Hdcg4z83Ek=",
+        "path": "/Users/jokar/devjon/configs/shells/shared",
+        "type": "path"
+      },
+      "original": {
+        "path": "/Users/jokar/devjon/configs/shells/shared",
+        "type": "path"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -36,6 +48,7 @@
     },
     "root": {
       "inputs": {
+        "devshell-lib": "devshell-lib",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       }
