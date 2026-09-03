@@ -4,7 +4,6 @@
 *.env
 *.env.*
 secrets*.json
-Secrets*.toml
 
 # Node / SvelteKit (rebuilt inside the image)
 node_modules
@@ -12,15 +11,6 @@ build
 .svelte-kit
 .vite
 
-# Rust (legacy app — not used)
-target
-Cargo.lock
-Cargo.toml
-backend
-cli
-shared
-
 # Misc
 .DS_Store
-.shuttle-storage
 README.md
