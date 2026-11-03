@@ -10,3 +10,4 @@ build/
 .vite/
 *.db
 .DS_Store
+!.env.example

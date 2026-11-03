@@ -1,4 +1,10 @@
-# me — project commands
+# me — jonkarrer.com project commands
+#
+# Secrets live in a local .env (gitignored; copy .env.example to start).
+# `set dotenv-load` puts them in the environment of every recipe, so
+# `bun run …` and `fly secrets import` see them without any wrapper.
+
+set dotenv-load
 
 # Default: list available commands
 default:
@@ -10,7 +16,7 @@ default:
 dev:
     @ip=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo localhost); \
     printf "\n  → http://%s:5173\n\n" "$ip"; \
-    doppler run --project personal-website --config dev -- bun run dev --host --port 5173 --strictPort
+    bun run dev --host --port 5173 --strictPort
 
 # Type-check the project
 check:
@@ -22,11 +28,11 @@ build:
 
 # Preview the production build
 preview:
-    doppler run --project personal-website --config dev -- bun run preview
+    bun run preview
 
 # Start the built server locally
 start:
-    doppler run --project personal-website --config dev -- node build
+    bun build/index.js
 
 # Install dependencies
 install:
@@ -40,26 +46,34 @@ clean:
 
 # Create tables (idempotent)
 migrate:
-    doppler run --project personal-website --config dev -- bun run scripts/migrate.ts
+    bun run scripts/migrate.ts
 
-# Import markdown journal entries from frontend/assets/journal
+# Import every markdown journal entry from frontend/assets/journal
 import-journal:
-    doppler run --project personal-website --config dev -- bun run scripts/import-journal.ts
+    bun run scripts/import-journal.ts
 
 # Publish or update one journal entry: just add-entry <slug> "<title>" "<description>"
 add-entry slug title description:
-    doppler run --project personal-website --config dev -- bun run scripts/add-entry.ts "{{slug}}" "{{title}}" "{{description}}"
+    bun run scripts/add-entry.ts "{{slug}}" "{{title}}" "{{description}}"
 
 # Patch blog titles with acronym allowlist
 fix-titles:
-    doppler run --project personal-website --config dev -- bun run scripts/fix-titles.ts
+    bun run scripts/fix-titles.ts
 
 # ─── Deploy ──────────────────────────────────────────────
 
-# Sync Doppler secrets to Fly
+# Push .env to the Fly app's secret store (app: jonkarrer, org: personal)
 sync-secrets:
-    doppler secrets download --project personal-website --config dev --no-file --format env-no-quotes | fly secrets import
+    grep -E '^[A-Z_]+=.+' .env | fly secrets import -a jonkarrer
 
 # Deploy to Fly.io
 deploy:
     fly deploy
+
+# Tail production logs
+logs:
+    fly logs -a jonkarrer
+
+# Open the live site
+open:
+    open https://jonkarrer.com
