@@ -1,6 +1,6 @@
 # Training a BERT Classifier in Rust With burn
 
-Cardsift tags every Magic card with what it does: ramp, removal, sac outlet, dig, stax, and 45 others. Those tags come from a multi-label text classifier I trained in Rust on [burn](https://burn.dev), with the Metal backend on a Mac. This is how it went.
+My Magic card search app tags every card with what it does: ramp, removal, sac outlet, dig, stax, and 45 others. Those tags come from a multi-label text classifier I trained in Rust on [burn](https://burn.dev), with the Metal backend on a Mac. This is how it went.
 
 ## The unit is an ability, not a card
 
@@ -14,7 +14,7 @@ instant  | Destroy target artifact. -> artifact hate, removal
 
 The kind matters. 422 cards print `{T}: Add {C}.` and it means different things on a land and on a mana rock. The text alone can't decide it.
 
-Pulling `card_ability` out of the Cardsift database and collapsing identical text on the same kind gives 33,412 distinct rows. Keywords like flying are left out on purpose: a regex finds those, and they'd crowd out what needs learning.
+Pulling `card_ability` out of the card database and collapsing identical text on the same kind gives 33,412 distinct rows. Keywords like flying are left out on purpose: a regex finds those, and they'd crowd out what needs learning.
 
 ## Labels, and the two times the rules were the bug
 

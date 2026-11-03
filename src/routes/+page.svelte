@@ -66,19 +66,6 @@
 			</div>
 		</article>
 
-		<article class="project grid gap-2">
-			<h3>Cardsift</h3>
-			<p>
-				Search every Magic: The Gathering card by what it says, on your phone, offline. All
-				34,000 cards live in a database on the device, regex included. Each card carries tags for
-				what it does, read from the rules text by a classifier I trained. Point the camera at a
-				card and it names the printing out of 109,632, without uploading anything.
-			</p>
-			<div class="pt-2 flex gap-4">
-				<span class="underline"><a href="/journal/cardsift-offline-search">Journal</a></span>
-				<span class="underline"><a href="/journal/bert-in-rust-with-burn">Classifier</a></span>
-			</div>
-		</article>
 		<img class="pixel-img" src="/assets/image/saturn.jpg" alt="pixel art of saturn" />
 	</div>
 
@@ -121,12 +108,10 @@
 		</article>
 
 		<article class="project grid gap-2">
-			<h3>Teli, Simbridge, Forest</h3>
+			<h3>Teli</h3>
 			<p>
-				Smaller tools from the same workshop. Teli launches coding agents inside a bubblewrap
-				sandbox with Doppler-scoped secrets. Simbridge drives the iOS Simulator from a browser over
-				SSH, screen stream and real taps included. Forest is a multilingual voice agent in the
-				browser where everything but the LLM runs locally.
+				A small harness for coding agents. It launches Claude Code or Codex inside a bubblewrap
+				sandbox with Doppler-scoped secrets, one configuration per project.
 			</p>
 		</article>
 		<img class="pixel-img" src="/assets/image/ody.jpg" alt="random space parts" />
