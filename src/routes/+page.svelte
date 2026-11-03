@@ -81,19 +81,26 @@
 		<img class="pixel-img" src="/assets/image/saturn.jpg" alt="pixel art of saturn" />
 	</div>
 
-	<p class="pb-5">Infrastructure and tools I built to ship those.</p>
+	<p class="pb-5">Hobby projects that I'm excited about.</p>
 	<div class="grid gap-8 pb-6">
 		<article class="project grid gap-2">
-			<h3>Headquarters</h3>
+			<h3>Tempo</h3>
 			<p>
-				An ops dashboard that pulls Fly, Cloudflare, Turso, Stripe, Resend, Anthropic and the
-				domain registrars into one database and derives the links between them, so it can answer
-				questions no vendor dashboard can. It also hosts the engineering standards every project
-				follows, served as plain text so coding agents read the same rules I do.
+				A quant research stack. Agents take a market hypothesis through data curation, feature
+				engineering, strategy design and a single-shot backtest, with a reviewer at every station.
+				A human approves what's viable. Deterministic code trades it. No model in the live loop,
+				on purpose.
 			</p>
-			<div class="pt-2">
-				<span class="underline"><a href="/journal/standards-for-agents">Journal</a></span>
-			</div>
+		</article>
+
+		<article class="project grid gap-2">
+			<h3>Studio</h3>
+			<p>
+				Research notebooks over my own market database. A sector taxonomy built from 10-K text
+				instead of SIC codes, sector models and premium backtests, a classifier for companies
+				about to fail trained on Sharadar fundamentals, and tail-risk fits with Student-t
+				distributions. It writes to no database; its output is the notebooks.
+			</p>
 		</article>
 
 		<article class="project grid gap-2">
@@ -110,12 +117,14 @@
 		</article>
 
 		<article class="project grid gap-2">
-			<h3>Tempo</h3>
+			<h3>Dato</h3>
 			<p>
-				A quant research stack. Agents take a market hypothesis through data curation, feature
-				engineering, strategy design and a single-shot backtest, with a reviewer at every station.
-				A human approves what's viable. Deterministic code trades it. No model in the live loop,
-				on purpose.
+				A market-data warehouse on TimescaleDB, running on a server in my house. Fourteen
+				scheduled pipelines, written in Rust, pull daily prices, fundamentals, SEC filings and
+				insider transactions, FRED series, CBOE, CFTC and FINRA reports, and news into one
+				schema. A daemon polls a job queue, dispatches each run, logs it, and refuses to start
+				if the schema drifts from the columns it expects. Tempo, Studio and the screener all
+				read from it.
 			</p>
 		</article>
 
