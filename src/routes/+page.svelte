@@ -25,8 +25,20 @@
 		<h2>Things I've built</h2>
 	</header>
 
-	<p class="pb-5">Products shipped through Using AI.</p>
+	<p class="pb-5">Products I have shipped.</p>
 	<div class="grid gap-8 pb-6">
+		<article class="project grid gap-2">
+			<h3>Using AI</h3>
+			<p>
+				A software studio and AI consultancy. The studio builds and ships its own products, the
+				ones below. The consultancy helps businesses fold AI into work they already do, one layer
+				at a time.
+			</p>
+			<div class="pt-2">
+				<span class="underline"><a href="https://usingai.app">Website</a></span>
+			</div>
+		</article>
+
 		<article class="project grid gap-2">
 			<h3>Bernt</h3>
 			<p>
