@@ -12,20 +12,9 @@
 		<h2>Hi, I'm Jon.</h2>
 	</header>
 	<p>
-		I lead AI engineering at Teleforce, where the job is deciding which problems get a
-		model, which get a rule, and making the voice agents on a 24/7 call pipeline behave. Before
-		that I managed projects there, and before that I wrote the front end.
-	</p>
-	<p class="pt-3">
-		On the side I run <a class="underline inline" href="https://usingai.app">Using AI</a>, a small
-		software studio and consultancy. The studio has shipped four products so far, three of them
-		iPhone apps. The consultancy helps businesses fold AI into work they already do, one layer at
-		a time.
-	</p>
-	<p class="pt-3">
-		I like the whole thing: the prompt, the schema, the backend, the app, the billing webhook, the
-		deploy, and the dashboard that tells me when any of it breaks. I write about it in the
-		<a class="underline inline" href="/journal">journal</a>.
+		Another programmer on another slice of the internet. Probably solving another problem, or
+		creating another thing. I love it, and will do it in a loop while alive is true. Take a look
+		around at some of my stuff, or just say hi.
 	</p>
 	<img class="mt-5 pixel-img" src="/assets/image/looking_out.jpg" alt="pixel art of a robot" />
 </section>
