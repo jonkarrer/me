@@ -46,6 +46,10 @@ migrate:
 import-journal:
     doppler run --project personal-website --config dev -- bun run scripts/import-journal.ts
 
+# Publish or update one journal entry: just add-entry <slug> "<title>" "<description>"
+add-entry slug title description:
+    doppler run --project personal-website --config dev -- bun run scripts/add-entry.ts "{{slug}}" "{{title}}" "{{description}}"
+
 # Patch blog titles with acronym allowlist
 fix-titles:
     doppler run --project personal-website --config dev -- bun run scripts/fix-titles.ts
